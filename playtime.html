@@ -1,0 +1,64 @@
+<!Doctype html>
+
+  <head>
+  </head>
+  <body>
+ 	<section>
+ 		<div class="container">
+ 			<div class="row">
+ 				<div class="offset-md-3 col-md-6">
+ 					<div class="border">
+        		<form action="">
+        			<h1 class="name">Playtime</h1>
+        			<div class="line"></div>
+        			<label for="time"class="nam">Enter time in 24hr:</label>
+	           	 <input type="number"class="input"id="time" required/> (0-24)<br>
+	        		<label for="dayt"class="nam">Sunny or raining:</label>
+	              <input type="text"class="input"id="dayt" required/>sunny or raining<br>
+	        		<label for="park"class="nam">Is park opened or closed?</label>
+	            	<input type="text"class="input"id="park" required/>opened or closed<br>
+        		</form>
+            <input type="button"class="btn"id="btn"value="Submit"onclick="click()">
+            <div class="showresult"id="showresult"></div>
+        	</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</section>
+
+  </body>
+  <script>
+	window.onload=function(e){
+    document.getElementById('btn').addEventListener('click',click)
+
+            function click(){
+    var acc = document.getElementById("time").value;
+    var name = document.getElementById("dayt").value;
+    var ent = document.getElementById("park").value;
+    
+
+       if (time < 17 && dayt == sunny && park == opened){
+        var result = 'Lets go out and play';
+    }
+   else if (time < 17 && dayt == sunny && park == closed){
+        var result = 'lets play at backyard';
+    }
+   else if (time < 17 && dayt == raining && park == opened){
+        var result = 'Lets play indoor game';
+    }
+   else if (time < 17 && dayt == raining && park == closed){
+        var result = 'Lets go to cinema';
+    }
+   else if (time < 9 ){
+        var result = 'Too Early to play';
+    }
+	else if (time > 17){
+        var result = 'Too dark to play';
+    }
+	
+    document.getElementById("showresult").innerHTML= ""+result+""; 
+ 
+}    
+    }
+</script>
+</html>
