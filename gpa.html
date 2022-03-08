@@ -1,0 +1,78 @@
+<!Doctype html>
+
+  <head>
+  </head>
+  <body>
+ 	<section>
+ 		<div class="container">
+ 			<div class="row">
+ 				<div class="offset-md-3 col-md-6">
+ 					<div class="border">
+        		<form action="">
+        			<h1 class="name">GPA, EP, MODULE GRADING</h1>
+        			<div class="line"></div>
+        			<label for="gpa"class="nam">GPA</label>
+	           	 <input type="number"class="input"id="gpa"placeholder="Input your GPA" required/ ><br>
+	        		<label for="ep"class="nam">EP</label>
+	              <input type="number"class="input"id="ep"placeholder="Input your EP" required/><br>
+	        		<label for="sub"class="nam">Module Passed</label>
+	            	<input type="number"class="input"id="sub"placeholder="Input your how many subject you pass (total 8 subject)" required /> Total 8 Subjects<br>
+        		</form>
+            <input type="button"class="btn"id="btn"value="SUBMIT"onclick="click()">
+            <div class="showresult"id="showresult"></div>
+        	</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</section>
+
+  </body>
+  <script>
+	window.onload=function(e){
+    document.getElementById('btn').addEventListener('click',click)
+
+            function click(){
+    var acc = document.getElementById("gpa").value;
+    var name = document.getElementById("ep").value;
+    var ent = document.getElementById("sub").value;
+    
+
+       if (gpa = 1 && ep >= 64 && sub == 8){
+        var result = 'You obtained Diploma with grade (pass). Congratulation! You will gradute';
+    }
+   else if (gpa = 2 && ep >= 64 && sub == 8){
+        var result = 'You obtained Diploma with grade (Merit). Congratulation! You will gradute';
+    }
+   else if (gpa = 3 && ep >= 64 && sub == 8){
+        var result = 'You obtained Diploma with grade (Destinction). Congratulation! You will gradute';
+    }
+   else if (gpa = 0 && ep < 64 || ep >= 64){
+        var result = 'Your overall GPA must >0 and <=3!';
+    }
+   else if (gpa = 1 && ep >= 50 && sub == 8){
+        var result = 'You obtained Diploma with grade Pass. You will graduate with a condition. See CSDI officer';
+    }
+	else if (gpa = 2 && ep >= 50 && sub == 8){
+        var result = 'You obtained Diploma with grade Merit. You will graduate with a condition. See CSDI officer';
+    }
+	else if (gpa = 3 && ep >= 50 && sub == 8){
+        var result = 'You obtained Diploma with grade Destinction. You will graduate with a condition. See CSDI officer';
+    }
+	else if (gpa = 1 && ep < 50 && sub == 8){
+        var result = 'You obtain Diploma with grade Pass. However you failed EP. You will not be able to graduate';
+    }
+	else if (gpa = 2 && ep < 50 && sub == 8){
+        var result = 'You obtain Diploma with grade Merit. However you failed EP. You will not be able to graduate';
+    }
+	else if (gpa = 3 && ep < 50 && sub == 8){
+        var result = 'You obtain Diploma with grade Dictinction. However you failed EP. You will not be able to graduate';
+    }
+   else {
+        var result = 'You must Passed ALL modules you will not be able to graduate';
+    }
+    document.getElementById("showresult").innerHTML= ""+result+""; 
+ 
+}    
+    }
+</script>
+</html>
